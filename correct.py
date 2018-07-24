@@ -29,7 +29,7 @@ def edits1(word):
     transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
     replaces   = [L + c + R[1:]           for L, R in splits if R for c in letters]
     inserts    = [L + c + R               for L, R in splits for c in letters]
-    return set(deletes + transposes + replaces + inserts)
+    return set(deletes + transposes + replaces + inserts+ saves)
 
 def edits2(word): 
     "All edits that are two edits away from `word`."
